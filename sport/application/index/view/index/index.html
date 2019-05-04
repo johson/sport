@@ -1,0 +1,34 @@
+﻿{extend name="public/base"}
+
+{block name="seo"}
+<title>首页~欢迎来到运动会主平台</title>
+<meta name="keywords" content="{$keywords|default='页面关键字'}">
+<meta name="description" content="{$desc|default='页面描述'}">
+</head>
+<body>
+{/block}
+
+
+{block name="content"}
+<section class="Hui-article-box">
+	<nav class="breadcrumb" style="padding-top:1px;"><i class="Hui-iconfont"></i> <a href="/" class="maincolor">首页</a>
+		<span class="c-999 en">&gt;</span>
+		<span class="c-666">我的桌面</span> 
+		<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:4px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a>
+	</nav>
+	<div class="Hui-article">
+		<article class="cl pd-20">
+			<p class="f-20 text-success">欢迎使用运动会主平台！</p>
+		</article>
+		<footer class="footer">
+			<!--<p>感谢jQuery、layer、laypage、Validform、UEditor、My97DatePicker、iconfont、Datatables、WebUploaded、icheck、highcharts、bootstrap-Switch<br> Copyright &copy;2015 H-ui.admin v3.0 All Rights Reserved.<br> 本后台系统由<a href="http://www.h-ui.net/" target="_blank" title="H-ui前端框架">H-ui前端框架</a>提供前端技术支持</p>-->
+         </footer>
+	</div>
+</section>
+{/block}
+
+{block name="js"}{/block}
+
+
+</body>
+</html>

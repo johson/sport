@@ -1,0 +1,99 @@
+{extend name="public/base"}
+
+{block name="seo"}
+<title>{$title|default='页面标题'}</title>
+<meta name="keywords" content="{$keywords|default='页面关键字'}">
+<meta name="description" content="{$desc|default='页面描述'}">
+</head>
+<body>
+{/block}
+
+
+{block name="content"}
+<div class="container"></div>
+<section class="Hui-article-box">
+    <nav class="breadcrumb" style="padding-top:1px;"><i class="Hui-iconfont">&#xe67f;</i> <a  href="{:url('index/index')}">首页</a>
+        <span class="c-gray en">&gt;</span>
+        团队成绩查询
+
+        <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a> </nav>
+
+
+    <div class="Hui-article" style="width: 400px; margin-left: 500px">
+        <article class="cl pd-20">
+
+            <table class="table table-border table-bordered table-bgtable">
+                <thead>
+                <tr>
+                    <th scope="col" colspan="9">个人成绩查询</th>
+                </tr>
+
+                {volist name="list" id="vo"}
+                <tr>
+                    <td width="100">参赛号：</td>
+                    <td>{$vo.id}</td>
+                </tr>
+                <tr>
+                    <td width="100">姓名：</td>
+                    <td>{$vo.realname}</td>
+                </tr>
+                <tr>
+                    <td width="100">学号：</td>
+                    <td>{$vo.stu_num}</td>
+                </tr>
+                <tr>
+                    <td width="30">联系方式：</td>
+                    <td>{$vo.tel}</td>
+                </tr>
+                <tr>
+                    <td width="10">级别：</td>
+                    <td>{$vo.grade}</td>
+                </tr>
+                <tr>
+                    <td width="20">专业：</td>
+                    <td>{$vo.spe}</td>
+                </tr>
+                <tr>
+                    <td width="10">班级：</td>
+                    <td>{$vo.class}</td>
+                </tr>
+                {eq name="$vo.art1" value="4*100米（男）"}
+                <tr>
+                    <td width="10">已报名：</td>
+                    <td>{$vo.art1}</td>
+                </tr>
+                <tr>
+                    <td width="10">比赛成绩：</td>
+                    <td>{$vo.score1}</td>
+                </tr>
+                {/eq}
+
+                {eq name="$vo.art2" value="4*400米（男）"}
+                <tr>
+                    <td width="10">已报名：</td>
+                    <td>{$vo.art2}</td>
+                </tr>
+                <tr>
+                    <td width="10">比赛成绩：</td>
+                    <td>{$vo.score2}</td>
+                </tr>
+                {/eq}
+                {/volist}
+
+            </table>
+
+        </article>
+    </div>
+
+
+</section>
+{/block}
+
+{block name='js'}
+<!--&lt;!&ndash;/请在上方写此页面业务相关的脚本&ndash;&gt;-->
+{/block}
+
+
+
+</body>
+</html>

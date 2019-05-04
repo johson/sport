@@ -1,0 +1,176 @@
+{extend name='public/base'/}
+{block name='header'}{/block}
+{block name='menu'}{/block}
+
+{block name='seo'}
+<title>{$title|default="标题"}</title>
+<meta name="keywords" content="{$keywords|default='关键字'}">
+<meta name="description" content="{$desc|default='描述'}">
+{/block}
+
+{block name='content'}
+<article class="cl pd-20">
+
+
+	<form action="" method="post" class="form form-horizontal" id="form-admin-add">
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>账号：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" placeholder="请输入真实姓名" name="name" id="name" value="{$user_info.name}">
+			</div>
+		</div>
+
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>密码：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" placeholder="请输入6位数字密码" name="password" id="password" value="{$user_info.password}">
+			</div>
+		</div>
+
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>姓名：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" placeholder="真实姓名" name="realname" id="realname" value="{$user_info.realname}">
+			</div>
+		</div>
+
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>学号：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" placeholder="学号" name="stu_num" id="stu_num" value="{$user_info.stu_num}">
+			</div>
+		</div>
+
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>联系方式：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="tel" class="input-text" placeholder="请输入正确的联系方式" name="tel" id="tel" value="{$user_info.tel}">
+			</div>
+		</div>
+
+
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>级别：</label>
+			<span class="select-box" style="width:150px;margin-left: 15px">
+						<select class="select" name="grade" id="grade">
+					        <option value="15" >15级</option>
+					        <option value="16" >16级</option>
+                            <option value="17" >17级</option>
+                            <option value="18" >18级</option>
+				        </select>
+                </span>
+		</div>
+
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>专业：</label>
+			<span class="select-box" style="width:150px;margin-left: 15px">
+						<select class="select" name="spe" id="spe">
+					        <option value="软件工程系" >软件工程系</option>
+					        <option value="计算机系" >计算机系</option>
+                            <option value="外语系" >外语系</option>
+                            <option value="国贸系" >国贸系</option>
+                            <option value="管理系" >管理系</option>
+                            <option value="财会系" >财会系</option>
+                            <option value="电子系" >电子系</option>
+                            <option value="游戏系" >游戏系</option>
+                            <option value="网络技术系" >网络技术系</option>
+                            <option value="数码媒体系" >数码媒体系</option>
+				        </select>
+                </span>
+		</div>
+
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>班级：</label>
+			<span class="select-box" style="width:150px;margin-left: 15px">
+						<select class="select" name="class" id="class">
+					        <option value="1班" >1班</option>
+					        <option value="2班" >2班</option>
+					        <option value="3班" >3班</option>
+					        <option value="4班" >4班</option>
+					        <option value="5班" >5班</option>
+					        <option value="6班" >6班</option>
+					        <option value="7班" >7班</option>
+					        <option value="8班" >8班</option>
+					        <option value="9班" >9班</option>
+					        <option value="10班" >10班</option>
+					        <option value="11班" >11班</option>
+					        <option value="12班" >12班</option>
+					        <option value="13班" >13班</option>
+					        <option value="14班" >14班</option>
+					        <option value="15班" >15班</option>
+				        </select>
+                </span>
+		</div>
+
+
+
+
+		<!--将当前记录的id做为隐藏域发送到服务器-->
+		<input type="hidden" value="{$user_info.id}" name="id">
+
+		<div class="row cl">
+			<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+				<input class="btn btn-primary radius disabled" type="button" value="&nbsp;&nbsp;提交&nbsp;&nbsp;" id="submit" >
+			</div>
+		</div>
+	</form>
+
+
+</article>
+{/block}
+
+{block name='footer'}
+<script type="text/javascript" src="__STATIC__/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="__STATIC__/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="__STATIC__/static/h-ui/js/H-ui.js"></script>
+<!--<script type='text/javascript' src='/static/base.js'></script>-->
+{js href="/static/js/base.js" /}
+<script type="text/javascript" src="__STATIC__/static/h-ui.admin/js/H-ui.admin.page.js"></script>
+{/block}
+
+{block name='js'}
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="__STATIC__/lib/jquery.validation/1.14.0/jquery.validate.js"></script>
+<script type="text/javascript" src="__STATIC__/lib/jquery.validation/1.14.0/validate-methods.js"></script>
+<script type="text/javascript" src="__STATIC__/lib/jquery.validation/1.14.0/messages_zh.js"></script>
+
+
+
+
+<script>
+
+	$(function(){
+
+	    $("form").children().change(function(){
+	        $("#submit").removeClass('disabled');
+		});
+
+
+
+        $("#submit").on("click", function(event){
+            $.ajax({
+				type: "POST",
+				url: "{:url('man/editUser')}",
+				data: $("#form-admin-add").serialize(),
+				dataType: "json",
+				success: function(data){
+				    if (data.status == 1) {
+						alert(data.message);
+
+					} else {
+                        alert(data.message);
+
+					}
+				}
+			});
+
+		})
+
+
+
+	})
+</script>
+{/block}
+
+</body>
+</html>

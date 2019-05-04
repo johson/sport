@@ -1,0 +1,76 @@
+{extend name="public/base"}
+
+{block name="seo"}
+<title>{$title|default='页面标题'}</title>
+<meta name="keywords" content="{$keywords|default='页面关键字'}">
+<meta name="description" content="{$desc|default='页面描述'}">
+</head>
+<body>
+{/block}
+
+
+{block name="content"}
+<section class="Hui-article-box">
+    <nav class="breadcrumb" style="padding-top:1px;"><i class="Hui-iconfont">&#xe67f;</i> <a  href="{:url('index/index')}">首页</a>
+        <span class="c-gray en">&gt;</span>
+        团体运动员比赛排名
+
+        <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a> </nav>
+    <div class="Hui-article">
+        <article class="cl pd-20">
+
+
+            <table class="table table-border table-bordered table-bg">
+                <thead>
+                <tr>
+                    <th scope="col" colspan="9">排名列表</th>
+                </tr>
+                <tr class="text-c">
+                    <th width="20">比赛号</th>
+                    <th width="20">队员一</th>
+                    <th width="30">队员一学号</th>
+                    <th width="20">队员二</th>
+                    <th width="30">队员二学号</th>
+                    <th width="20">队员三</th>
+                    <th width="30">队员三学号</th>
+                    <th width="20">队员四</th>
+                    <th width="30">队员四学号</th>
+                    <th width="20">参赛项目</th>
+                    <th width="20">成绩 XX.XX.XX(分.秒.毫秒)</th>
+                </tr>
+                </thead>
+                <tbody>
+                {volist name="list" id="vo"}
+                <tr class="text-c">
+                    <td>{$vo.id}</td>
+                    <td>{$vo.team1}</td>
+                    <td>{$vo.stu_num1}</td>
+                    <td>{$vo.team2}</td>
+                    <td>{$vo.stu_num2}</td>
+                    <td>{$vo.team3}</td>
+                    <td>{$vo.stu_num3}</td>
+                    <td>{$vo.team4}</td>
+                    <td>{$vo.stu_num4}</td>
+                    <td>{$vo.art1}</td>
+                    <td>{$vo.score1}</td>
+                </tr>
+                {/volist}
+
+                </tbody>
+            </table>
+
+        </article>
+    </div>
+
+</section>
+{/block}
+
+{block name='js'}
+
+
+{/block}
+
+
+
+</body>
+</html>

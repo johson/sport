@@ -1,0 +1,191 @@
+{extend name='public/base'/}
+{block name='header'}{/block}
+{block name='menu'}{/block}
+
+{block name='seo'}
+<title>{$title|default="标题"}</title>
+<meta name="keywords" content="{$keywords|default='关键字'}">
+<meta name="description" content="{$desc|default='描述'}">
+{/block}
+
+{block name='content'}
+<article class="cl pd-20">
+
+
+	<form action="" method="post" class="form form-horizontal" id="form-admin-add">
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>姓名：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" placeholder="请输入真实姓名" name="name" id="name" value="{$user_info.name}" readonly>
+			</div>
+		</div>
+
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>学号：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" placeholder="学号" name="stu_num" id="stu_num" value="{$user_info.stu_num}" readonly>
+			</div>
+		</div>
+
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>联系方式：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="tel" class="input-text" placeholder="请输入正确的联系方式" name="tel" id="tel" value="{$user_info.tel}" readonly>
+			</div>
+		</div>
+
+
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>级别：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="number" min="14" max="19" class="input-text" placeholder="级别" name="grade" id="grade" value="{$user_info.grade}" readonly>
+			</div>
+		</div>
+
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>专业：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="tel" class="input-text" placeholder="专业" name="spe" id="spe" value="{$user_info.spe}" readonly>
+			</div>
+		</div>
+
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>班级：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="number"min="1" max="20" class="input-text" autocomplete="off" value="{$user_info.class}"  placeholder="班级" id="class" name="class" readonly>
+			</div>
+		</div>
+
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>队员1：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" autocomplete="off" value="{$user_info.team1}"  placeholder="队员1" id="team1" name="team1">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>学号1：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" autocomplete="off" value="{$user_info.stu_num1}"  placeholder="学号1" id="stu_num1" name="stu_num1">
+			</div>
+		</div>
+
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>队员2：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" autocomplete="off" value="{$user_info.team2}"  placeholder="队员2" id="team2" name="team2">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>学号2：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" autocomplete="off" value="{$user_info.stu_num2}"  placeholder="学号2" id="stu_num2" name="stu_num2">
+			</div>
+		</div>
+
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>队员3：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" autocomplete="off" value="{$user_info.team3}"  placeholder="队员3" id="team3" name="team3">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>学号3：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" autocomplete="off" value="{$user_info.stu_num3}"  placeholder="学号3" id="stu_num3" name="stu_num3">
+			</div>
+		</div>
+
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>队员4：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" autocomplete="off" value="{$user_info.team4}"  placeholder="队员4" id="team4" name="team4">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>学号4：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" autocomplete="off" value="{$user_info.stu_num4}"  placeholder="学号4" id="stu_num4" name="stu_num4">
+			</div>
+		</div>
+
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>参赛项目：</label>
+
+			<label><input type="checkbox" name="art1" id="art1" value="4*100米（男）"/>&nbsp;4*100米（男）&nbsp;&nbsp;&nbsp;</label>
+			<label><input type="checkbox" name="art2" id="art2" value="4*400米（男）"/>&nbsp;4*100米（男）&nbsp;&nbsp;&nbsp;</label>
+
+
+		</div>
+
+
+
+
+		<!--将当前记录的id做为隐藏域发送到服务器-->
+		<input type="hidden" value="{$user_info.id}" name="id">
+
+		<div class="row cl">
+			<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+				<input class="btn btn-primary radius disabled" type="button" value="&nbsp;&nbsp;提交&nbsp;&nbsp;" id="submit" >
+			</div>
+		</div>
+	</form>
+
+
+</article>
+{/block}
+
+{block name='footer'}
+<script type="text/javascript" src="__STATIC__/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="__STATIC__/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="__STATIC__/static/h-ui/js/H-ui.js"></script>
+<!--<script type='text/javascript' src='/static/base.js'></script>-->
+{js href="/static/js/base.js" /}
+<script type="text/javascript" src="__STATIC__/static/h-ui.admin/js/H-ui.admin.page.js"></script>
+{/block}
+
+{block name='js'}
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="__STATIC__/lib/jquery.validation/1.14.0/jquery.validate.js"></script>
+<script type="text/javascript" src="__STATIC__/lib/jquery.validation/1.14.0/validate-methods.js"></script>
+<script type="text/javascript" src="__STATIC__/lib/jquery.validation/1.14.0/messages_zh.js"></script>
+
+
+
+
+<script>
+
+    $(function(){
+
+        $("form").children().change(function(){
+            $("#submit").removeClass('disabled');
+        });
+
+
+
+        $("#submit").on("click", function(event){
+            $.ajax({
+                type: "POST",
+                url: "{:url('leader/editUser')}",
+                data: $("#form-admin-add").serialize(),
+                dataType: "json",
+                success: function(data){
+                    if (data.status == 1) {
+                        alert(data.message);
+
+                    } else {
+                        alert(data.message);
+
+                    }
+                }
+            });
+
+        })
+
+
+
+    })
+</script>
+{/block}
+
+</body>
+</html>

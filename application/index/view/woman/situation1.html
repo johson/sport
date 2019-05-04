@@ -1,0 +1,75 @@
+{extend name="public/base"}
+
+{block name="seo"}
+<title>{$title|default='页面标题'}</title>
+<meta name="keywords" content="{$keywords|default='页面关键字'}">
+<meta name="description" content="{$desc|default='页面描述'}">
+</head>
+<body>
+{/block}
+
+
+{block name="content"}
+<section class="Hui-article-box">
+    <nav class="breadcrumb" style="padding-top:1px;"><i class="Hui-iconfont">&#xe67f;</i> <a  href="{:url('index/index')}">首页</a>
+        <span class="c-gray en">&gt;</span>
+        女运动员报名情况
+
+        <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a> </nav>
+    <div class="Hui-article">
+        <article class="cl pd-20">
+
+            <div class="cl pd-5 bg-1 bk-gray mt-20">
+                <span class="r">共有数据：<strong>{$count}</strong> 条</span>
+            </div>
+            <table class="table table-border table-bordered table-bg">
+                <thead>
+                <tr>
+                    <th scope="col" colspan="9">信息列表</th>
+                </tr>
+                <tr class="text-c">
+                    <th width="20">比赛号</th>
+                    <th width="20">姓名</th>
+                    <th width="30">学号</th>
+                    {eq name="$Think.session.role" value="4"}
+                    <th width="30">联系方式</th>
+                    <th width="10">级别</th>
+                    <th width="20">专业</th>
+                    <th width="10">班级</th>
+                    {/eq}
+                    <th width="10">报名项目</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                {volist name="list" id="vo"}
+                <tr class="text-c">
+                    <td>{$vo.id}</td>
+                    <td>{$vo.realname}</td>
+                    <td>{$vo.stu_num}</td>
+                    {eq name="$Think.session.role" value="4"}
+                    <td>{$vo.tel}</td>
+                    <td>{$vo.grade}</td>
+                    <td>{$vo.spe}</td>
+                    <td>{$vo.class}</td>
+                    {/eq}
+                    <td>{$vo.art1}</td>
+                </tr>
+                {/volist}
+                </tbody>
+            </table>
+
+        </article>
+    </div>
+
+</section>
+{/block}
+
+{block name='js'}
+
+{/block}
+
+
+
+</body>
+</html>

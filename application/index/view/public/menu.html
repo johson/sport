@@ -1,0 +1,351 @@
+<!--_menu 作为公共模版分离出去-->
+<aside class="Hui-aside">
+
+    <div class="menu_dropdown bk_2">
+
+
+        <!--男运动员菜单列表-->
+        {eq name="$Think.session.role" value="1"}
+        <dl>
+            <dt><i class="Hui-iconfont">&#xe60d;</i> 报名项目<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+            <dd>
+                <ul>
+                    <li><a href="{:url('man/index')}" title="男运动员报名">男运动员报名</a></li></ul>
+            </dd>
+        </dl>
+
+        <dl>
+            <dt><i class="Hui-iconfont">&#xe62d;</i> 参赛信息<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+            <dd>
+                <ul>
+                    <li><a href="{:url('man/rule')}" title="比赛项目说明">比赛项目说明</a></li>
+                    <li><a href="{:url('man/matchMessage')}" title="个人参赛信息">个人参赛信息</a></li>
+                </ul>
+            </dd>
+        </dl>
+
+
+        <dl>
+            <dt><i class="Hui-iconfont">&#xe62d;</i> 个人信息<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+            <dd>
+                <ul>
+                    <li><a href="{:url('man/message')}" title="个人信息">个人信息</a></li>
+                </ul>
+            </dd>
+        </dl>
+
+        <dl>
+            <dt><i class="Hui-iconfont">&#xe62d;</i> 成绩查询<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+            <dd>
+                <ul>
+                    <li><a href="{:url('man/search')}" title="个人参赛信息">个人成绩查询</a></li>
+                </ul>
+            </dd>
+        </dl>
+        {/eq}
+
+       <!--女运动员菜单列表-->
+        {eq name="$Think.session.role" value="2"}
+        <dl>
+            <dt><i class="Hui-iconfont">&#xe60d;</i> 报名项目<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+            <dd>
+                <ul>
+                    <li><a href="{:url('woman/index')}" title="女运动员报名">女运动员报名</a></li>
+                </ul>
+            </dd>
+        </dl>
+
+        <dl>
+            <dt><i class="Hui-iconfont">&#xe62d;</i> 参赛信息<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+            <dd>
+                <ul>
+                    <li><a href="{:url('woman/rule')}" title="比赛项目说明">比赛项目说明</a></li>
+                    <li><a href="{:url('woman/matchMessage')}" title="个人参赛信息">个人参赛信息</a></li>
+                </ul>
+            </dd>
+        </dl>
+
+
+        <dl>
+            <dt><i class="Hui-iconfont">&#xe62d;</i> 个人信息<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+            <dd>
+                <ul>
+                    <li><a href="{:url('woman/message')}" title="个人信息">个人信息</a></li>
+                </ul>
+            </dd>
+        </dl>
+
+        <dl>
+            <dt><i class="Hui-iconfont">&#xe62d;</i> 成绩查询<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+            <dd>
+                <ul>
+                    <li><a href="{:url('woman/search')}" title="个人成绩查询">个人成绩查询</a></li>
+                </ul>
+            </dd>
+        </dl>
+        {/eq}
+
+        <!--领队菜单列表-->
+        {eq name="$Think.session.role" value="3"}
+        <dl>
+            <dt><i class="Hui-iconfont">&#xe60d;</i> 报名项目<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+            <dd>
+                <ul>
+                    <li><a href="{:url('leader/index')}" title="团体报名">团体报名</a></li>
+                </ul>
+            </dd>
+        </dl>
+
+        <dl>
+            <dt><i class="Hui-iconfont">&#xe62d;</i> 参赛信息<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+            <dd>
+                <ul>
+                    <li><a href="{:url('leader/rule')}" title="比赛项目说明">比赛项目说明</a></li>
+                    <li><a href="{:url('leader/matchMessage')}" title="个人参赛信息">个人参赛信息</a></li>
+                </ul>
+            </dd>
+        </dl>
+
+
+        <dl>
+            <dt><i class="Hui-iconfont">&#xe62d;</i> 团队信息<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+            <dd>
+                <ul>
+                    <li><a href="{:url('leader/message')}" title="团队信息">团队信息</a></li>
+                </ul>
+            </dd>
+        </dl>
+
+        <dl>
+            <dt><i class="Hui-iconfont">&#xe62d;</i> 成绩查询<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+            <dd>
+                <ul>
+                    <li><a href="{:url('leader/search')}" title="团队参赛信息">团队成绩查询</a></li>
+                </ul>
+            </dd>
+        </dl>
+        {/eq}
+
+
+        <!--裁判菜单列表-->
+        {eq name="$Think.session.role" value="4"}
+
+        <dl>
+            <dt><i class="Hui-iconfont">&#xe61a;</i> 所负责项目<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+            <dd>
+                <ul>
+                    <li><a href="{:url('judgment/index')}" title="个人成绩查询">所负责项目及信息</a></li>
+                </ul>
+            </dd>
+        </dl>
+
+        <dl>
+            <dt><i class="Hui-iconfont">&#xe61a;</i> 男子成绩录入<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+            <dd>
+                <ul>
+                    {eq name="$Think.session.art" value="100米"}
+                    <li><a href="{:url('man/score1')}" title="100米">100米</a></li>
+                    {/eq}
+                    {eq name="$Think.session.art" value="200米"}
+                    <li><a href="{:url('man/score2')}" title="200米">200米</a></li>
+                    {/eq}
+                    {eq name="$Think.session.art" value="400米"}
+                    <li><a href="{:url('man/score3')}" title="400米">400米</a></li>
+                    {/eq}
+                    {eq name="$Think.session.art" value="800米"}
+                    <li><a href="{:url('man/score4')}" title="800米">800米</a></li>
+                    {/eq}
+                    {eq name="$Think.session.art" value="1500米"}
+                    <li><a href="{:url('man/score5')}" title="1500米">1500米</a></li>
+                    {/eq}
+                    {eq name="$Think.session.art" value="4*100米"}
+                    <li><a href="{:url('leader/score1')}" title="4*100米">4*100米</a></li>
+                    {/eq}
+                    {eq name="$Think.session.art" value="4*400米"}
+                    <li><a href="{:url('leader/score2')}" title="4*400米">4*400米</a></li>
+                    {/eq}
+                    {eq name="$Think.session.art" value="实心球"}
+                    <li><a href="{:url('man/score6')}" title="实心球">实心球</a></li>
+                    {/eq}
+                    {eq name="$Think.session.art" value="铅球（7.26KG）"}
+                    <li><a href="{:url('man/score7')}" title="铅球（7.26KG）">铅球（7.26KG）</a></li>
+                    {/eq}
+                    {eq name="$Think.session.art" value="跳远"}
+                    <li><a href="{:url('man/score8')}" title="跳远">跳远</a></li>
+                    {/eq}
+                    {eq name="$Think.session.art" value="三级跳远"}
+                    <li><a href="{:url('man/score9')}" title="三级跳远">三级跳远</a></li>
+                    {/eq}
+                    {eq name="$Think.session.art" value="跳高"}
+                    <li><a href="{:url('man/score10')}" title="跳高">跳高</a></li>
+                    {/eq}
+                </ul>
+            </dd>
+        </dl>
+
+        <dl>
+            <dt><i class="Hui-iconfont">&#xe61a;</i> 女子成绩录入<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+            <dd>
+                <ul>{eq name="$Think.session.art" value="100米"}
+                    <li><a href="{:url('woman/score1')}" title="100米">100米</a></li>
+                    {/eq}
+                    {eq name="$Think.session.art" value="200米"}
+                    <li><a href="{:url('woman/score2')}" title="200米">200米</a></li>
+                    {/eq}
+                    {eq name="$Think.session.art" value="400米"}
+                    <li><a href="{:url('woman/score3')}" title="400米">400米</a></li>
+                    {/eq}
+                    {eq name="$Think.session.art" value="800米"}
+                    <li><a href="{:url('woman/score4')}" title="800米">800米</a></li>
+                    {/eq}
+                    {eq name="$Think.session.art" value="1500米"}
+                    <li><a href="{:url('woman/score5')}" title="1500米">1500米</a></li>
+                    {/eq}
+                    {eq name="$Think.session.art" value="实心球"}
+                    <li><a href="{:url('woman/score6')}" title="实心球">实心球</a></li>
+                    {/eq}
+                    {eq name="$Think.session.art" value="铅球（7.26KG）"}
+                    <li><a href="{:url('woman/score7')}" title="铅球（7.26KG）">铅球（7.26KG）</a></li>
+                    {/eq}
+                    {eq name="$Think.session.art" value="跳远"}
+                    <li><a href="{:url('woman/score8')}" title="跳远">跳远</a></li>
+                    {/eq}
+                    {eq name="$Think.session.art" value="三级跳远"}
+                    <li><a href="{:url('woman/score9')}" title="三级跳远">三级跳远</a></li>
+                    {/eq}
+                    {eq name="$Think.session.art" value="跳高"}
+                    <li><a href="{:url('woman/score10')}" title="跳高">跳高</a></li>
+                    {/eq}
+
+                </ul>
+            </dd>
+        </dl>
+
+        <dl>
+            <dt><i class="Hui-iconfont">&#xe61a;</i> 团体成绩录入<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+            <dd>
+                <ul>
+                    {eq name="$Think.session.art" value="4*100米（男）"}
+                    <li><a href="{:url('leader/score1')}" title="4*100米（男）">4*100米（男）</a></li>
+                    {/eq}
+                    {eq name="$Think.session.art" value="4*400米（男）"}
+                    <li><a href="{:url('leader/score2')}" title="4*400米（男）">4*400米（男）</a></li>
+                    {/eq}
+
+                </ul>
+            </dd>
+        </dl>
+        {/eq}
+
+        <dl>
+            <dt><i class="Hui-iconfont">&#xe61a;</i> 运动会赛程表<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+            <dd>
+                <ul>
+                    <li><a href="{:url('man/time')}" title="男子项目赛程表">男子项目赛程</a></li>
+                    <li><a href="{:url('woman/time')}" title="女子项目赛程表">女子项目赛程</a></li>
+                    <li><a href="{:url('leader/time')}" title="团体项目赛程表间">团体项目赛程</a></li>
+                </ul>
+            </dd>
+        </dl>
+
+        <dl>
+            <dt><i class="Hui-iconfont">&#xe61a;</i> 运动会秩序表<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+            <dd>
+                <ul>
+                    <li><a href="{:url('course/index')}" title="男子比赛时间">秩序表</a></li>
+                </ul>
+            </dd>
+        </dl>
+        <dl>
+            <dt><i class="Hui-iconfont">&#xe60d;</i> 男运动员报名情况<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+            <dd>
+                <ul>
+                    <li><a href="{:url('man/situation1')}" title="100米报名情况">100米</a></li>
+                    <li><a href="{:url('man/situation2')}" title="200米报名情况">200米</a></li>
+                    <li><a href="{:url('man/situation3')}" title="400米报名情况">400米</a></li>
+                    <li><a href="{:url('man/situation4')}" title="800米报名情况">800米</a></li>
+                    <li><a href="{:url('man/situation5')}" title="1500米报名情况">1500米</a></li>
+                    <li><a href="{:url('man/situation6')}" title="实心球报名情况">实心球</a></li>
+                    <li><a href="{:url('man/situation7')}" title="铅球（7.26KG）报名情况">铅球（7.26KG）</a></li>
+                    <li><a href="{:url('man/situation8')}" title="跳远报名情况">跳远</a></li>
+                    <li><a href="{:url('man/situation9')}" title="三级跳远报名情况">三级跳远</a></li>
+                    <li><a href="{:url('man/situation10')}" title="跳高报名情况">跳高</a></li>
+
+                </ul>
+            </dd>
+        </dl>
+
+        <dl>
+            <dt><i class="Hui-iconfont">&#xe60d;</i> 女运动员报名情况<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+            <dd>
+                <ul>
+                    <li><a href="{:url('woman/situation1')}" title="100米报名情况">100米</a></li>
+                    <li><a href="{:url('woman/situation2')}" title="200米报名情况">200米</a></li>
+                    <li><a href="{:url('woman/situation3')}" title="400米报名情况">400米</a></li>
+                    <li><a href="{:url('woman/situation4')}" title="800米报名情况">800米</a></li>
+                    <li><a href="{:url('woman/situation5')}" title="1500米报名情况">1500米</a></li>
+                    <li><a href="{:url('woman/situation6')}" title="实心球报名情况">实心球</a></li>
+                    <li><a href="{:url('woman/situation7')}" title="铅球（7.26KG）报名情况">铅球（7.26KG）</a></li>
+                    <li><a href="{:url('woman/situation8')}" title="跳远报名情况">跳远</a></li>
+                    <li><a href="{:url('woman/situation9')}" title="三级跳远报名情况">三级跳远</a></li>
+                    <li><a href="{:url('woman/situation10')}" title="跳高报名情况">跳高</a></li>
+
+                </ul>
+            </dd>
+        </dl>
+
+
+        <dl>
+            <dt><i class="Hui-iconfont">&#xe60d;</i> 团体报名情况<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+            <dd>
+                <ul>
+                    <li><a href="{:url('leader/situation1')}" title="4*100米（男）报名情况">4*100米（男）</a></li>
+                    <li><a href="{:url('leader/situation2')}" title="4*400米（男）报名情况">4*400米（男）</a></li>
+                </ul>
+            </dd>
+        </dl>
+
+        <dl>
+            <dt><i class="Hui-iconfont">&#xe61a;</i> 男子获奖名单<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+            <dd>
+                <ul>
+                    <li><a href="{:url('man/ranking1')}" title="100米">100米</a></li>
+                    <li><a href="{:url('man/ranking2')}" title="200米">200米</a></li>
+                    <li><a href="{:url('man/ranking3')}" title="400米">400米</a></li>
+                    <li><a href="{:url('man/ranking4')}" title="800米">800米</a></li>
+                    <li><a href="{:url('man/ranking5')}" title="1500米">1500米</a></li>
+
+                    <li><a href="{:url('leader/ranking1')}" title="4*100米">4*100米（男）</a></li>
+                    <li><a href="{:url('leader/ranking1')}" title="4*400米">4*400米（男）</a></li>
+
+                    <li><a href="{:url('man/ranking6')}" title="实心球">实心球</a></li>
+                    <li><a href="{:url('man/ranking7')}" title="铅球（7.26KG）">铅球（7.26KG）</a></li>
+                    <li><a href="{:url('man/ranking8')}" title="跳远">跳远</a></li>
+                    <li><a href="{:url('man/ranking9')}" title="三级跳远">三级跳远</a></li>
+                    <li><a href="{:url('man/ranking10')}" title="跳高">跳高</a></li>
+                </ul>
+            </dd>
+        </dl>
+
+        <dl>
+            <dt><i class="Hui-iconfont">&#xe61a;</i> 女子获奖名单<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+            <dd>
+                <ul>
+                    <li><a href="{:url('woman/ranking1')}" title="100米">100米</a></li>
+                    <li><a href="{:url('woman/ranking2')}" title="200米">200米</a></li>
+                    <li><a href="{:url('woman/ranking3')}" title="400米">400米</a></li>
+                    <li><a href="{:url('woman/ranking4')}" title="800米">800米</a></li>
+                    <li><a href="{:url('woman/ranking5')}" title="1500米">1500米</a></li>
+                    <li><a href="{:url('woman/ranking6')}" title="实心球">实心球</a></li>
+                    <li><a href="{:url('woman/ranking7')}" title="铅球（7.26KG）">铅球（7.26KG）</a></li>
+                    <li><a href="{:url('woman/ranking8')}" title="跳远">跳远</a></li>
+                    <li><a href="{:url('woman/ranking9')}" title="三级跳远">三级跳远</a></li>
+                    <li><a href="{:url('woman/ranking10')}" title="跳高">跳高</a></li>
+                </ul>
+            </dd>
+        </dl>
+
+    </div>
+</aside>
+<div class="dislpayArrow hidden-xs"><a class="pngfix" href="javascript:void(0);" onClick="displaynavbar(this)"></a></div>
+<!--/_menu 作为公共模版分离出去-->

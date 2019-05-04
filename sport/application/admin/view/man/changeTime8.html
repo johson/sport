@@ -1,0 +1,104 @@
+{extend name='public/base'/}
+{block name='header'}{/block}
+{block name='menu'}{/block}
+
+{block name='seo'}
+<title>{$title|default="标题"}</title>
+<meta name="keywords" content="{$keywords|default='关键字'}">
+<meta name="description" content="{$desc|default='描述'}">
+{/block}
+
+{block name='content'}
+<article class="cl pd-20">
+
+
+    <form action="" method="post" class="form form-horizontal" id="form-admin-add">
+
+
+
+
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>参赛项目：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" autocomplete="off" value="{$user_info.art8}"  placeholder="参赛项目" id="art8" name="art8" readonly>
+            </div>
+        </div>
+
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>时间：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" autocomplete="off" value="{$user_info.time8}"  placeholder="" id="time8" name="time8">
+            </div>
+        </div>
+
+
+
+        <!--将当前记录的id做为隐藏域发送到服务器-->
+        <input type="hidden" value="{$user_info.id}" name="id">
+
+        <div class="row cl">
+            <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+                <input class="btn btn-primary radius disabled" type="button" value="&nbsp;&nbsp;提交&nbsp;&nbsp;" id="submit" >
+            </div>
+        </div>
+    </form>
+
+
+</article>
+{/block}
+
+{block name='footer'}
+<script type="text/javascript" src="__STATIC__/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="__STATIC__/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="__STATIC__/static/h-ui/js/H-ui.js"></script>
+<!--<script type='text/javascript' src='/static/base.js'></script>-->
+{js href="/static/js/base.js" /}
+<script type="text/javascript" src="__STATIC__/static/h-ui.admin/js/H-ui.admin.page.js"></script>
+{/block}
+
+{block name='js'}
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="__STATIC__/lib/jquery.validation/1.14.0/jquery.validate.js"></script>
+<script type="text/javascript" src="__STATIC__/lib/jquery.validation/1.14.0/validate-methods.js"></script>
+<script type="text/javascript" src="__STATIC__/lib/jquery.validation/1.14.0/messages_zh.js"></script>
+
+
+
+
+<script>
+
+    $(function(){
+
+        $("form").children().change(function(){
+            $("#submit").removeClass('disabled');
+        });
+
+
+
+        $("#submit").on("click", function(event){
+            $.ajax({
+                type: "POST",
+                url: "{:url('man/changeTime_edit8')}",
+                data: $("#form-admin-add").serialize(),
+                dataType: "json",
+                success: function(data){
+                    if (data.status == 1) {
+                        alert(data.message);
+
+                    } else {
+                        alert(data.message);
+
+                    }
+                }
+            });
+
+        })
+
+
+
+    })
+</script>
+{/block}
+
+</body>
+</html>

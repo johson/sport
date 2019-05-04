@@ -1,0 +1,169 @@
+{extend name="public/base"}
+
+{block name="seo"}
+<title>{$title|default='页面标题'}</title>
+<meta name="keywords" content="{$keywords|default='页面关键字'}">
+<meta name="description" content="{$desc|default='页面描述'}">
+</head>
+<body>
+{/block}
+
+
+{block name="content"}
+<section class="Hui-article-box">
+    <nav class="breadcrumb" style="padding-top:1px;"><i class="Hui-iconfont">&#xe67f;</i> <a  href="{:url('/admin')}">首页</a>
+        <span class="c-gray en">&gt;</span>
+        女子项目赛程
+
+        <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a> </nav>
+    <div class="Hui-article">
+        <article class="cl pd-20">
+
+
+            <table class="table table-border table-bordered table-bg">
+                <thead>
+                <tr>
+                    <th scope="col" colspan="9">信息列表</th>
+                </tr>
+                <tr class="text-c">
+                    <th width="20">比赛项目</th>
+                    <th width="20">比赛时间</th>
+                    <th width="40">操作</th>
+                </tr>
+                {volist name="list1" id="vo"}
+                <tr class="text-c">
+
+                    <td>{$vo.art1}</td>
+                    <td>{$vo.time1}</td>
+                    <td class="td-manage">
+                        <a title="编辑" href="javascript:;" onclick="admin_edit('信息编辑','{:url("woman/changeTime1",["id"=>$vo["id"]])}','1','800','500')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>
+                    </td>
+                </tr>
+                {/volist}
+                {volist name="list2" id="vo"}
+                <tr class="text-c">
+
+                    <td>{$vo.art2}</td>
+                    <td>{$vo.time2}</td>
+                    <td class="td-manage">
+                        <a title="编辑" href="javascript:;" onclick="admin_edit('信息编辑','{:url("woman/changeTime2",["id"=>$vo["id"]])}','1','800','500')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>
+                    </td>
+                </tr>
+                {/volist}
+                {volist name="list3" id="vo"}
+                <tr class="text-c">
+
+                    <td>{$vo.art3}</td>
+                    <td>{$vo.time3}</td>
+                    <td class="td-manage">
+                        <a title="编辑" href="javascript:;" onclick="admin_edit('信息编辑','{:url("woman/changeTime3",["id"=>$vo["id"]])}','1','800','500')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>
+                    </td>
+                </tr>
+                {/volist}
+                {volist name="list4" id="vo"}
+                <tr class="text-c">
+
+                    <td>{$vo.art4}</td>
+                    <td>{$vo.time4}</td>
+                    <td class="td-manage">
+                        <a title="编辑" href="javascript:;" onclick="admin_edit('信息编辑','{:url("woman/changeTime4",["id"=>$vo["id"]])}','1','800','500')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>
+                    </td>
+                </tr>
+                {/volist}
+                {volist name="list5" id="vo"}
+                <tr class="text-c">
+
+                    <td>{$vo.art5}</td>
+                    <td>{$vo.time5}</td>
+                    <td class="td-manage">
+                        <a title="编辑" href="javascript:;" onclick="admin_edit('信息编辑','{:url("woman/changeTime5",["id"=>$vo["id"]])}','1','800','500')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>
+                    </td>
+                </tr>
+                {/volist}
+                {volist name="list6" id="vo"}
+                <tr class="text-c">
+
+                    <td>{$vo.art6}</td>
+                    <td>{$vo.time6}</td>
+                    <td class="td-manage">
+                        <a title="编辑" href="javascript:;" onclick="admin_edit('信息编辑','{:url("woman/changeTime6",["id"=>$vo["id"]])}','1','800','500')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>
+                    </td>
+                </tr>
+                {/volist}
+                {volist name="list7" id="vo"}
+                <tr class="text-c">
+
+                    <td>{$vo.art7}</td>
+                    <td>{$vo.time7}</td>
+                    <td class="td-manage">
+                        <a title="编辑" href="javascript:;" onclick="admin_edit('信息编辑','{:url("woman/changeTime7",["id"=>$vo["id"]])}','1','800','500')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>
+                    </td>
+                </tr>
+                {/volist}
+                {volist name="list8" id="vo"}
+                <tr class="text-c">
+
+                    <td>{$vo.art8}</td>
+                    <td>{$vo.time8}</td>
+                    <td class="td-manage">
+                        <a title="编辑" href="javascript:;" onclick="admin_edit('信息编辑','{:url("woman/changeTime8",["id"=>$vo["id"]])}','1','800','500')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>
+                    </td>
+                </tr>
+                {/volist}
+                {volist name="list9" id="vo"}
+                <tr class="text-c">
+
+                    <td>{$vo.art9}</td>
+                    <td>{$vo.time9}</td>
+                    <td class="td-manage">
+                        <a title="编辑" href="javascript:;" onclick="admin_edit('信息编辑','{:url("woman/changeTime9",["id"=>$vo["id"]])}','1','800','500')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>
+                    </td>
+                </tr>
+                {/volist}
+                {volist name="list10" id="vo"}
+                <tr class="text-c">
+
+                    <td>{$vo.art10}</td>
+                    <td>{$vo.time10}</td>
+                    <td class="td-manage">
+                        <a title="编辑" href="javascript:;" onclick="admin_edit('信息编辑','{:url("woman/changeTime10",["id"=>$vo["id"]])}','1','800','500')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>
+                    </td>
+                </tr>
+                {/volist}
+
+                </tbody>
+            </table>
+
+        </article>
+    </div>
+
+</section>
+{/block}
+
+{block name='js'}
+
+<script type="text/javascript">
+    /*
+     参数解释：
+     title	标题
+     url		请求的url
+     id		需要操作的数据id
+     w		弹出层宽度（缺省调默认值）
+     h		弹出层高度（缺省调默认值）
+     */
+
+    /*运动员-编辑*/
+    function admin_edit(title,url,id,w,h){
+        $.get(url,{id:id}); //执行控制器中的编辑操作
+        layer_show(title,url,w,h);
+    }
+
+
+
+</script>
+{/block}
+
+
+
+</body>
+</html>

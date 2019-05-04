@@ -1,0 +1,85 @@
+{extend name="public/base"}
+
+{block name="seo"}
+<title>{$title|default='页面标题'}</title>
+<meta name="keywords" content="{$keywords|default='页面关键字'}">
+<meta name="description" content="{$desc|default='页面描述'}">
+</head>
+<body>
+{/block}
+
+
+{block name="content"}
+<section class="Hui-article-box">
+    <nav class="breadcrumb" style="padding-top:1px;"><i class="Hui-iconfont">&#xe67f;</i> <a  href="{:url('/admin')}">首页</a>
+        <span class="c-gray en">&gt;</span>
+        男子运动员成绩列表
+
+        <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a> </nav>
+    <div class="Hui-article">
+        <article class="cl pd-20">
+
+
+            <table class="table table-border table-bordered table-bg">
+                <thead>
+                <tr>
+                    <th scope="col" colspan="9">信息列表</th>
+                </tr>
+                <tr class="text-c">
+                    <th width="20">比赛号</th>
+                    <th width="20">姓名</th>
+                    <th width="30">学号</th>
+                    <th width="20">参赛项目</th>
+                    <th width="20">成绩</th>
+                    <th width="40">操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                {volist name="list" id="vo"}
+                <tr class="text-c">
+                    <td>{$vo.id}</td>
+                    <td>{$vo.realname}</td>
+                    <td>{$vo.stu_num}</td>
+                    <td>{$vo.art1}</td>
+                    <td>{$vo.score1}</td>
+                    <td class="td-manage">
+                        <a title="编辑" href="javascript:;" onclick="admin_edit('信息编辑','{:url("man/changeScore1",["id"=>$vo["id"]])}','1','800','500')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>
+                    </td>
+                </tr>
+                {/volist}
+                </tbody>
+            </table>
+
+        </article>
+    </div>
+
+</section>
+{/block}
+
+{block name='js'}
+
+<script type="text/javascript">
+    /*
+     参数解释：
+     title	标题
+     url		请求的url
+     id		需要操作的数据id
+     w		弹出层宽度（缺省调默认值）
+     h		弹出层高度（缺省调默认值）
+     */
+
+    /*运动员-编辑*/
+    function admin_edit(title,url,id,w,h){
+        $.get(url,{id:id}); //执行控制器中的编辑操作
+        layer_show(title,url,w,h);
+    }
+
+
+
+</script>
+{/block}
+
+
+
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="__STATIC__/lib/html5.js"></script>
+    <script type="text/javascript" src="__STATIC__/lib/respond.min.js"></script>
+    <![endif]-->
+    <link href="__STATIC__/static/h-ui/css/H-ui.min.css" rel="stylesheet" type="text/css" />
+    <link href="__STATIC__/static/h-ui/css/H-ui.login.css" rel="stylesheet" type="text/css" />
+    <link href="__STATIC__/static/h-ui.admin/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="__STATIC__/lib/Hui-iconfont/1.0.8/iconfont.css" rel="stylesheet" type="text/css" />
+    <!--[if IE 6]>
+    <script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
+    <script>DD_belatedPNG.fix('*');</script><![endif]-->
+    <!-- Bootstrap -->
+    <link href="__STATIC__/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <title>用户注册</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+</head>
+<body>
+<div class="container" style="padding-top: 50px">
+    <div class="page-header alert alert-info"style="padding-left: 10px">
+        <h1>注册 <small>用户注册</small></h1>
+    </div>
+    <article class="cl pd-20">
+        <form action="/topman" method="post" class="form form-horizontal" id="form-admin-add">
+
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">角色：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+					<span class="select-box" style="width:150px;">
+						<select class="select" name="juese">
+					       <option value="1" >男运动员</option>
+                           <option value="2" >女运动员</option>
+					       <option value="3" >领队</option>
+				        </select>
+				    </span>
+                </div>
+            </div>
+
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>账号：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input  type="text" class="input-text" value="" placeholder="账户" id="name" name="name">
+                </div>
+            </div>
+
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>用户密码：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="password" class="input-text" autocomplete="off" value=""  placeholder="密码为6位" id="password" name="password">
+                </div>
+            </div>
+
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>姓名：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input  type="text" class="input-text" value="" placeholder="请输入真实姓名" id="realname" name="realname">
+                </div>
+            </div>
+
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>学号：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="tel" class="input-text" placeholder="请输入正确学号" name="stu_num" id="stu_num" value="">
+                </div>
+            </div>
+
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>联系方式：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="tel" class="input-text" placeholder="请输入有效号码" name="tel" id="tel" value="">
+                </div>
+            </div>
+
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>级别：</label>
+
+                <span class="select-box" style="width:150px;margin-left: 15px">
+						<select class="select" name="grade" id="grade">
+					        <option value="15级" >15级</option>
+					        <option value="16级" >16级</option>
+                            <option value="17级" >17级</option>
+                            <option value="18级" >18级</option>
+				        </select>
+                </span>
+            </div>
+
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>专业：</label>
+                <span class="select-box" style="width:150px;margin-left: 15px">
+						<select class="select" name="spe" id="spe">
+					        <option value="软件工程系" >软件工程系</option>
+					        <option value="计算机系" >计算机系</option>
+                            <option value="外语系" >外语系</option>
+                            <option value="国贸系" >国贸系</option>
+                            <option value="管理系" >管理系</option>
+                            <option value="财会系" >财会系</option>
+                            <option value="电子系" >电子系</option>
+                            <option value="游戏系" >游戏系</option>
+                            <option value="网络技术系" >网络技术系</option>
+                            <option value="数码媒体系" >数码媒体系</option>
+				        </select>
+                </span>
+            </div>
+
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>班级：</label>
+                <span class="select-box" style="width:150px;margin-left: 15px">
+						<select class="select" name="class" id="class">
+					        <option value="1班" >1班</option>
+					        <option value="2班" >2班</option>
+					        <option value="3班" >3班</option>
+					        <option value="4班" >4班</option>
+					        <option value="5班" >5班</option>
+					        <option value="6班" >6班</option>
+					        <option value="7班" >7班</option>
+					        <option value="8班" >8班</option>
+					        <option value="9班" >9班</option>
+					        <option value="10班" >10班</option>
+					        <option value="11班" >11班</option>
+					        <option value="12班" >12班</option>
+					        <option value="13班" >13班</option>
+					        <option value="14班" >14班</option>
+					        <option value="15班" >15班</option>
+				        </select>
+                </span>
+            </div>
+
+
+
+            <div class="row cl">
+                <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+                    <input class="btn btn-success" type="submit" value="提交" id="submit">
+                    <input class="btn btn-danger" type="reset" value="重置" >
+                </div>
+            </div>
+        </form>
+
+
+    </article>
+</div>
+
+</div>
+
+
+
+<script type="text/javascript" src="__STATIC__/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="__STATIC__/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="__STATIC__/static/h-ui/js/H-ui.js"></script>
+<!--<script type='text/javascript' src='/static/base.js'></script>-->
+{js href="/static/js/base.js" /}
+<script type="text/javascript" src="__STATIC__/static/h-ui.admin/js/H-ui.admin.page.js"></script>
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="__STATIC__/lib/jquery.validation/1.14.0/jquery.validate.js"></script>
+<script type="text/javascript" src="__STATIC__/lib/jquery.validation/1.14.0/validate-methods.js"></script>
+<script type="text/javascript" src="__STATIC__/lib/jquery.validation/1.14.0/messages_zh.js"></script>
+
+
+
+
+<script>
+
+    $(function(){
+
+        //防止用户无更新提交,只有表中数据有变化时才允许提交
+        $("form").children().change(function(){
+            $("#submit").removeClass('disabled');
+        });
+
+        //失去焦点时,学号是否重复
+        $("#stu_num").blur(function(){
+            $.ajax({
+                type: 'GET',
+                url: "checkStuNum",
+                data:{stu_num:$(this).val()},
+                dataType: 'json',
+                success: function(data){
+                    if (data.status == 1) {
+                        alert(data.message);
+                    } else {
+                        alert(data.message);
+                    }
+                }
+            });
+        });
+
+
+    })
+</script>
+
+</body>
+</html>

@@ -1,0 +1,163 @@
+{extend name="public/base"}
+{block name="header"}{/block}
+{block name="menu"}{/block}
+
+{block name="seo"}
+<title>{$title|default='页面标题'}</title>
+<meta name="keywords" content="{$keywords|default='页面关键字'}">
+<meta name="description" content="{$desc|default='页面描述'}">
+</head>
+<body>
+{/block}
+
+
+{block name="content"}
+<article class="cl pd-20">
+
+
+	<form action="/man" method="post" class="form form-horizontal" id="form-admin-add">
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>账号：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input  type="text" class="input-text" value="" placeholder="请输入真实姓名" id="name" name="name">
+			</div>
+		</div>
+
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>用户密码：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="password" class="input-text" autocomplete="off" value=""  placeholder="密码为6位" id="password" name="password">
+			</div>
+		</div>
+
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>姓名：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="tel" class="input-text" placeholder="请输入真实姓名" name="realname" id="realname" value="">
+			</div>
+		</div>
+
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>学号：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="tel" class="input-text" placeholder="请输入正确学号" name="stu_num" id="stu_num" value="">
+			</div>
+		</div>
+
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>联系方式：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="tel" class="input-text" placeholder="请输入有效号码" name="tel" id="tel" value="">
+			</div>
+		</div>
+
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>级别：</label>
+
+			<span class="select-box" style="width:150px;margin-left: 15px">
+						<select class="select" name="grade" id="grade">
+					        <option value="15" >15级</option>
+					        <option value="16" >16级</option>
+                            <option value="17" >17级</option>
+                            <option value="18" >18级</option>
+				        </select>
+                </span>
+		</div>
+
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>专业：</label>
+			<span class="select-box" style="width:150px;margin-left: 15px">
+						<select class="select" name="spe" id="spe">
+					        <option value="软件工程系" >软件工程系</option>
+					        <option value="计算机系" >计算机系</option>
+                            <option value="外语系" >外语系</option>
+                            <option value="国贸系" >国贸系</option>
+                            <option value="管理系" >管理系</option>
+                            <option value="财会系" >财会系</option>
+                            <option value="电子系" >电子系</option>
+                            <option value="游戏系" >游戏系</option>
+                            <option value="网络技术系" >网络技术系</option>
+                            <option value="数码媒体系" >数码媒体系</option>
+				        </select>
+                </span>
+		</div>
+
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>班级：</label>
+			<span class="select-box" style="width:150px;margin-left: 15px">
+						<select class="select" name="class" id="class">
+					        <option value="1" >1班</option>
+					        <option value="2" >2班</option>
+					        <option value="3" >3班</option>
+					        <option value="4" >4班</option>
+					        <option value="5" >5班</option>
+					        <option value="6" >6班</option>
+					        <option value="7" >7班</option>
+					        <option value="8" >8班</option>
+					        <option value="9" >9班</option>
+					        <option value="10" >10班</option>
+					        <option value="11" >11班</option>
+					        <option value="12" >12班</option>
+					        <option value="13" >13班</option>
+					        <option value="14" >14班</option>
+					        <option value="15" >15班</option>
+				        </select>
+                </span>
+		</div>
+
+
+
+		<div class="row cl">
+			<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+				<input class="btn btn-success" type="submit" value="提交" id="submit">
+				<input class="btn btn-danger" type="reset" value="重置" >
+			</div>
+		</div>
+	</form>
+
+
+</article>
+{/block}
+
+{block name="js"}
+<script type="text/javascript" src="__STATIC__/lib/jquery.validation/1.14.0/jquery.validate.js"></script>
+<script type="text/javascript" src="__STATIC__/lib/jquery.validation/1.14.0/validate-methods.js"></script>
+<script type="text/javascript" src="__STATIC__/lib/jquery.validation/1.14.0/messages_zh.js"></script>
+
+
+
+
+<script>
+
+    $(function(){
+
+        //防止用户无更新提交,只有表中数据有变化时才允许提交
+        $("form").children().change(function(){
+            $("#submit").removeClass('disabled');
+        });
+
+        //失去焦点时,检查用户名是否重复
+        $("#stu_num").blur(function(){
+            $.ajax({
+                type: 'GET',
+                url: "checkStuNum",
+                data:{stu_num:$(this).val()},
+                dataType: 'json',
+                success: function(data){
+                    if (data.status == 1) {
+                        alert(data.message);
+                    } else {
+                        alert(data.message);
+                    }
+                }
+            });
+        });
+
+
+    })
+</script>
+{/block}
+
+
+</body>
+</html>

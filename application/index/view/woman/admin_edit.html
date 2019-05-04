@@ -1,0 +1,148 @@
+{extend name='public/base'/}
+{block name='header'}{/block}
+{block name='menu'}{/block}
+
+{block name='seo'}
+<title>{$title|default="标题"}</title>
+<meta name="keywords" content="{$keywords|default='关键字'}">
+<meta name="description" content="{$desc|default='描述'}">
+{/block}
+
+{block name='content'}
+<article class="cl pd-20">
+
+
+	<form action="" method="post" class="form form-horizontal" id="form-admin-add">
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>姓名：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" placeholder="请输入真实姓名" name="realname" id="realname" value="{$user_info.realname}" readonly>
+			</div>
+		</div>
+
+
+
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>学号：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" placeholder="学号" name="stu_num" id="stu_num" value="{$user_info.stu_num}" readonly>
+			</div>
+		</div>
+
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>联系方式：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="tel" class="input-text" placeholder="请输入正确的联系方式" name="tel" id="tel" value="{$user_info.tel}" readonly>
+			</div>
+		</div>
+
+
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>级别：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="number" min="14" max="19" class="input-text" placeholder="级别" name="grade" id="grade" value="{$user_info.grade}" readonly>
+			</div>
+		</div>
+
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>专业：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="tel" class="input-text" placeholder="专业" name="spe" id="spe" value="{$user_info.spe}" readonly>
+			</div>
+		</div>
+
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>班级：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="tel" class="input-text" placeholder="班级" name="class" id="class" value="{$user_info.class}" readonly>
+			</div>
+		</div>
+
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>参赛项目：</label>
+
+			<label><input type="checkbox" name="art1" id="art1" value="100米"/>&nbsp;100米&nbsp;&nbsp;&nbsp;</label>
+			<label><input type="checkbox" name="art2" id="art2" value="200米"/>&nbsp;200米&nbsp;&nbsp;&nbsp;</label>
+			<label><input type="checkbox" name="art3" id="art3" value="400米"/>&nbsp;400米&nbsp;&nbsp;&nbsp;</label>
+			<label><input type="checkbox" name="art4" id="art4" value="800米"/>&nbsp;800米&nbsp;&nbsp;&nbsp;</label>
+			<label><input type="checkbox" name="art5" id="art5" value="1500米"/>&nbsp;1500米&nbsp;&nbsp;&nbsp;</label><br>
+			<label><input type="checkbox" name="art6" id="art6" value="实心球"/>&nbsp;实心球&nbsp;&nbsp;&nbsp;</label>
+			<label><input type="checkbox" name="art7" id="art7" value="铅球（7.26KG）"/>&nbsp;铅球（7.26KG）&nbsp;&nbsp;&nbsp;</label>
+			<label><input type="checkbox" name="art8" id="art8" value="跳远"/>&nbsp;跳远&nbsp;&nbsp;&nbsp;</label>
+			<label><input type="checkbox" name="art9" id="art9" value="三级跳远"/>&nbsp;三级跳远&nbsp;&nbsp;&nbsp;</label>
+			<label><input type="checkbox" name="art10" id="art10" value="跳高"/>&nbsp;跳高&nbsp;&nbsp;&nbsp;</label>
+
+		</div>
+
+
+		<!--将当前记录的id做为隐藏域发送到服务器-->
+		<input type="hidden" value="{$user_info.id}" name="id">
+
+		<div class="row cl">
+			<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+				<input class="btn btn-primary radius disabled" type="button" value="&nbsp;&nbsp;提交&nbsp;&nbsp;" id="submit" >
+			</div>
+		</div>
+	</form>
+
+
+</article>
+{/block}
+
+{block name='footer'}
+<script type="text/javascript" src="__STATIC__/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="__STATIC__/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="__STATIC__/static/h-ui/js/H-ui.js"></script>
+<!--<script type='text/javascript' src='/static/base.js'></script>-->
+{js href="/static/js/base.js" /}
+<script type="text/javascript" src="__STATIC__/static/h-ui.admin/js/H-ui.admin.page.js"></script>
+{/block}
+
+{block name='js'}
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="__STATIC__/lib/jquery.validation/1.14.0/jquery.validate.js"></script>
+<script type="text/javascript" src="__STATIC__/lib/jquery.validation/1.14.0/validate-methods.js"></script>
+<script type="text/javascript" src="__STATIC__/lib/jquery.validation/1.14.0/messages_zh.js"></script>
+
+
+
+
+<script>
+
+    $(function(){
+
+        $("form").children().change(function(){
+            $("#submit").removeClass('disabled');
+        });
+
+
+
+        $("#submit").on("click", function(event){
+            $.ajax({
+                type: "POST",
+                url: "{:url('woman/editUser')}",
+                data: $("#form-admin-add").serialize(),
+                dataType: "json",
+                success: function(data){
+                    if (data.status == 1) {
+                        alert(data.message);
+
+                    } else {
+                        alert(data.message);
+
+                    }
+                }
+            });
+
+        })
+
+
+
+
+
+    })
+</script>
+{/block}
+
+</body>
+</html>

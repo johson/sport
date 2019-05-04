@@ -1,0 +1,206 @@
+{extend name="public/base"}
+
+{block name="seo"}
+<title>{$title|default='页面标题'}</title>
+<meta name="keywords" content="{$keywords|default='页面关键字'}">
+<meta name="description" content="{$desc|default='页面描述'}">
+</head>
+<body>
+{/block}
+
+
+{block name="content"}
+<div class="container"></div>
+<section class="Hui-article-box">
+    <nav class="breadcrumb" style="padding-top:1px;"><i class="Hui-iconfont">&#xe67f;</i> <a  href="{:url('index/index')}">首页</a>
+        <span class="c-gray en">&gt;</span>
+        所负责项目及项目信息
+
+        <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a> </nav>
+
+
+    <div class="Hui-article">
+        <article class="cl pd-20">
+
+            <table class="table table-border table-bordered table-bg">
+                <thead>
+                <tr>
+                    <th scope="col" colspan="9">所负责项目及信息</th>
+                </tr>
+                <tr class="text-c">
+                    <th width="20">编号</th>
+                    <th width="20">姓名</th>
+                    <th width="30">学号</th>
+                    <th width="20">负责项目</th>
+                    <th width="20">男子比赛项目时间</th>
+                    {eq name="$Think.session.art" value="100米"}
+                    <th width="20">女子比赛项目时间</th>
+                    {/eq}
+                    {eq name="$Think.session.art" value="200米"}
+                    <th width="20">女子比赛项目时间</th>
+                    {/eq}
+                    {eq name="$Think.session.art" value="400米"}
+                    <th width="20">女子比赛项目时间</th>
+                    {/eq}
+                    {eq name="$Think.session.art" value="800米"}
+                    <th width="20">女子比赛项目时间</th>
+                    {/eq}
+                    {eq name="$Think.session.art" value="1500米"}
+                    <th width="20">女子比赛项目时间</th>
+                    {/eq}
+                    {eq name="$Think.session.art" value="实心球"}
+                    <th width="20">女子比赛项目时间</th>
+                    {/eq}
+                    {eq name="$Think.session.art" value="铅球（7.26KG）"}
+                    <th width="20">女子比赛项目时间</th>
+                    {/eq}
+                    {eq name="$Think.session.art" value="跳远"}
+                    <th width="20">女子比赛项目时间</th>
+                    {/eq}
+                    {eq name="$Think.session.art" value="三级跳远"}
+                    <th width="20">女子比赛项目时间</th>
+                    {/eq}
+                    {eq name="$Think.session.art" value="跳高"}
+                    <th width="20">女子比赛项目时间</th>
+                    {/eq}
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="text-c">
+                {volist name="list" id="vo"}
+
+                    <td>{$vo.id}</td>
+                    <td>{$vo.realname}</td>
+                    <td>{$vo.stu_num}</td>
+                    <td>{$vo.art}</td>
+                {/volist}
+                    {eq name="$Think.session.art" value="100米"}
+                       {volist name="man" id="vo"}
+                         <td>{$vo.time1}</td>
+                       {/volist}
+                       {volist name="woman" id="vo"}
+                         <td>{$vo.time1}</td>
+                       {/volist}
+                    {/eq}
+
+                    {eq name="$Think.session.art" value="200米"}
+                    {volist name="man" id="vo"}
+                    <td>{$vo.time2}</td>
+                    {/volist}
+                    {volist name="woman" id="vo"}
+                    <td>{$vo.time2}</td>
+                    {/volist}
+                    {/eq}
+
+                    {eq name="$Think.session.art" value="400米"}
+                    {volist name="man" id="vo"}
+                    <td>{$vo.time3}</td>
+                    {/volist}
+                    {volist name="woman" id="vo"}
+                    <td>{$vo.time3}</td>
+                    {/volist}
+                    {/eq}
+
+                    {eq name="$Think.session.art" value="800米"}
+                    {volist name="man" id="vo"}
+                    <td>{$vo.time4}</td>
+                    {/volist}
+                    {volist name="woman" id="vo"}
+                    <td>{$vo.time4}</td>
+                    {/volist}
+                    {/eq}
+
+                    {eq name="$Think.session.art" value="1500米"}
+                    {volist name="man" id="vo"}
+                    <td>{$vo.time5}</td>
+                    {/volist}
+                    {volist name="woman" id="vo"}
+                    <td>{$vo.time5}</td>
+                    {/volist}
+                    {/eq}
+
+                    {eq name="$Think.session.art" value="实心球"}
+                    {volist name="man" id="vo"}
+                    <td>{$vo.time6}</td>
+                    {/volist}
+                    {volist name="woman" id="vo"}
+                    <td>{$vo.time6}</td>
+                    {/volist}
+                    {/eq}
+
+                    {eq name="$Think.session.art" value="铅球（7.26KG）"}
+                    {volist name="man" id="vo"}
+                    <td>{$vo.time7}</td>
+                    {/volist}
+                    {volist name="woman" id="vo"}
+                    <td>{$vo.time7}</td>
+                    {/volist}
+                    {/eq}
+
+                    {eq name="$Think.session.art" value="跳远"}
+                    {volist name="man" id="vo"}
+                    <td>{$vo.time8}</td>
+                    {/volist}
+                    {volist name="woman" id="vo"}
+                    <td>{$vo.time8}</td>
+                    {/volist}
+                    {/eq}
+
+                    {eq name="$Think.session.art" value="三级跳远"}
+                    {volist name="man" id="vo"}
+                    <td>{$vo.time9}</td>
+                    {/volist}
+                    {volist name="woman" id="vo"}
+                    <td>{$vo.time9}</td>
+                    {/volist}
+                    {/eq}
+
+                    {eq name="$Think.session.art" value="跳高"}
+                    {volist name="man" id="vo"}
+                    <td>{$vo.time10}</td>
+                    {/volist}
+                    {volist name="woman" id="vo"}
+                    <td>{$vo.time10}</td>
+                    {/volist}
+                    {/eq}
+
+                    {eq name="$Think.session.art" value="4*100米（男）"}
+                    {volist name="leader" id="vo"}
+                    <td>{$vo.time1}</td>
+                    {/volist}
+                    {/eq}
+
+                    {eq name="$Think.session.art" value="4*400米（男）"}
+                    {volist name="leader" id="vo"}
+                    <td>{$vo.time2}</td>
+                    {/volist}
+
+                    {/eq}
+
+                </tr>
+                </tbody>
+            </table>
+
+        </article>
+    </div>
+
+
+</section>
+{/block}
+
+{block name='js'}
+
+<script type="text/javascript">
+
+
+
+
+</script>
+
+{/block}
+
+
+
+</body>
+</html>

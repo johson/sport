@@ -1,0 +1,139 @@
+﻿{extend name="public/base"}
+
+{block name="seo"}
+<title>裁判员列表</title>
+<meta name="keywords" content="{$keywords|default='页面关键字'}">
+<meta name="description" content="{$desc|default='页面描述'}">
+</head>
+<body>
+{/block}
+
+
+{block name="content"}
+<section class="Hui-article-box">
+	<nav class="breadcrumb" style="padding-top:1px;"><i class="Hui-iconfont">&#xe67f;</i> <a  href="{:url('/admin')}">首页</a>
+		<span class="c-gray en">&gt;</span>
+		裁判员列表
+
+		<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a> </nav>
+	<div class="Hui-article">
+		<article class="cl pd-20">
+
+			<div class="cl pd-5 bg-1 bk-gray mt-20">
+				<span class="l">
+					<a href="javascript:;" onclick="unDelete()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量恢复</a>
+					<a href="javascript:;" onclick="admin_add('添加裁判员','{:url("judgment/adminAdd")}','800','500')" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加裁判员</a> </span>
+				<span class="r">共有数据：<strong>{$count}</strong> 条</span>
+			</div>
+			<table class="table table-border table-bordered table-bg">
+				<thead>
+				<tr>
+					<th scope="col" colspan="9">信息列表</th>
+				</tr>
+				<tr class="text-c">
+					<th width="20">编号</th>
+					<th width="20">账号</th>
+					<th width="20">密码</th>
+					<th width="20">姓名</th>
+					<th width="30">学号</th>
+					<th width="30">联系方式</th>
+					<th width="10">级别</th>
+					<th width="20">专业</th>
+					<th width="10">班级</th>
+					<th width="20">负责项目</th>
+					<th width="40">操作</th>
+				</tr>
+				</thead>
+				<tbody>
+				{volist name="list" id="vo"}
+				<tr class="text-c">
+					<td>{$vo.id}</td>
+					<td>{$vo.name}</td>
+					<td>{$vo.password}</td>
+					<td>{$vo.realname}</td>
+					<td>{$vo.stu_num}</td>
+					<td>{$vo.tel}</td>
+					<td>{$vo.grade}</td>
+					<td>{$vo.spe}</td>
+					<td>{$vo.class}</td>
+					<td>{$vo.art}</td>
+					<td class="td-manage">
+						<a title="编辑" href="javascript:;" onclick="admin_edit('信息编辑','{:url("judgment/adminEdit",["id"=>$vo["id"]])}','1','800','500')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>
+						<a title="删除" href="javascript:;" onclick="admin_del(this,{$vo.id})" class="ml-5" style="text-decoration:none">
+							<i class="Hui-iconfont">&#xe6e2;</i>
+						</a>
+					</td>
+				</tr>
+				{/volist}
+				</tbody>
+			</table>
+			<div style="text-align: center">{$list->render()}</div>
+		</article>
+	</div>
+
+</section>
+{/block}
+
+{block name='js'}
+<!--&lt;!&ndash;请在下方写此页面业务相关的脚本&ndash;&gt;-->
+<!--<script type="text/javascript" src="__STATIC__/lib/My97DatePicker/4.8/WdatePicker.js"></script>-->
+<!--<script type="text/javascript" src="__STATIC__/lib/datatables/1.10.0/jquery.dataTables.min.js"></script>-->
+<!--<script type="text/javascript" src="__STATIC__/lib/laypage/1.2/laypage.js"></script>-->
+<!--//引入bootstrap-->
+<!--<script src="__STATIC__/bootstrap/js/jquery.min.js"></script>-->
+<!--&lt;!&ndash; 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 &ndash;&gt;-->
+<!--<script src="__STATIC__/bootstrap/js/bootstrap.min.js"></script>-->
+<script type="text/javascript">
+	/*
+	 参数解释：
+	 title	标题
+	 url		请求的url
+	 id		需要操作的数据id
+	 w		弹出层宽度（缺省调默认值）
+	 h		弹出层高度（缺省调默认值）
+	 */
+	/*管理员-增加*/
+
+    function admin_add(title,url,w,h){
+        $.post(url);
+        layer_show(title,url,w,h);
+    }
+
+
+	/*删除*/
+    function admin_del(obj,id){
+        layer.confirm('确认要删除吗？',function(index){
+            //此处请求后台程序，下方是成功后的前台处理……
+            $.get("{:url('judgment/deleteUser')}",{id:id})
+
+            $(obj).parents("tr").remove();
+            layer.msg('已删除!',{icon:1,time:1000});
+        });
+    }
+	/*编辑*/
+    function admin_edit(title,url,id,w,h){
+        $.get(url,{id:id}); //执行控制器中的编辑操作
+        layer_show(title,url,w,h);
+    }
+
+
+    //批量恢复
+    function unDelete() {
+
+layer.confirm('确认要恢复吗？', function () {
+$.get("{:url('judgment/unDelete')}");
+
+layer.msg('已恢复!', {icon: 1, time: 1000}); //消息弹层1秒后消失
+window.location.reload(); //重新加载页面,显示所有数据
+});
+}
+
+
+</script>
+<!--&lt;!&ndash;/请在上方写此页面业务相关的脚本&ndash;&gt;-->
+{/block}
+
+
+
+</body>
+</html>

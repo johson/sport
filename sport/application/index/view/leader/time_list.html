@@ -1,0 +1,68 @@
+{extend name="public/base"}
+
+{block name="seo"}
+<title>{$title|default='页面标题'}</title>
+<meta name="keywords" content="{$keywords|default='页面关键字'}">
+<meta name="description" content="{$desc|default='页面描述'}">
+</head>
+<body>
+{/block}
+
+
+{block name="content"}
+<section class="Hui-article-box">
+    <nav class="breadcrumb" style="padding-top:1px;"><i class="Hui-iconfont">&#xe67f;</i> <a  href="{:url('/index')}">首页</a>
+        <span class="c-gray en">>/span>
+        团体项目赛程
+
+        <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a> </nav>
+    <div class="Hui-article">
+        <article class="cl pd-20">
+
+
+            <table class="table table-border table-bordered table-bg">
+                <thead>
+                <tr>
+                    <th scope="col" colspan="9">团体项目赛程表</th>
+                </tr>
+                <tr class="text-c">
+                    <th width="20">比赛项目</th>
+                    <th width="20">比赛时间</th>
+
+                </tr>
+                {volist name="list1" id="vo"}
+                <tr class="text-c">
+
+                    <td>{$vo.art1}</td>
+                    <td>{$vo.time1}</td>
+
+                </tr>
+                {/volist}
+                {volist name="list2" id="vo"}
+                <tr class="text-c">
+
+                    <td>{$vo.art2}</td>
+                    <td>{$vo.time2}</td>
+
+                </tr>
+                {/volist}
+
+
+                </tbody>
+            </table>
+
+        </article>
+    </div>
+
+</section>
+{/block}
+
+{block name='js'}
+
+
+{/block}
+
+
+
+</body>
+</html>

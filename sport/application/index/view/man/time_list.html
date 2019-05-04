@@ -1,0 +1,131 @@
+{extend name="public/base"}
+
+{block name="seo"}
+<title>{$title|default='页面标题'}</title>
+<meta name="keywords" content="{$keywords|default='页面关键字'}">
+<meta name="description" content="{$desc|default='页面描述'}">
+</head>
+<body>
+{/block}
+
+
+{block name="content"}
+<section class="Hui-article-box">
+    <nav class="breadcrumb" style="padding-top:1px;"><i class="Hui-iconfont">&#xe67f;</i> <a  href="{:url('/index')}">首页</a>
+        <span class="c-gray en">&gt;</span>
+        男子项目赛程
+
+        <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a> </nav>
+    <div class="Hui-article">
+        <article class="cl pd-20">
+
+
+            <table class="table table-border table-bordered table-bg">
+                <thead>
+                <tr>
+                    <th scope="col" colspan="9">男子项目赛程表</th>
+                </tr>
+                <tr class="text-c">
+                    <th width="20">比赛项目</th>
+                    <th width="20">比赛时间</th>
+
+                </tr>
+                {volist name="list1" id="vo"}
+                <tr class="text-c">
+
+                    <td>{$vo.art1}</td>
+                    <td>{$vo.time1}</td>
+
+                </tr>
+                {/volist}
+                {volist name="list2" id="vo"}
+                <tr class="text-c">
+
+                    <td>{$vo.art2}</td>
+                    <td>{$vo.time2}</td>
+
+                </tr>
+                {/volist}
+                {volist name="list3" id="vo"}
+                <tr class="text-c">
+
+                    <td>{$vo.art3}</td>
+                    <td>{$vo.time3}</td>
+
+                </tr>
+                {/volist}
+                {volist name="list4" id="vo"}
+                <tr class="text-c">
+
+                    <td>{$vo.art4}</td>
+                    <td>{$vo.time4}</td>
+
+                </tr>
+                {/volist}
+                {volist name="list5" id="vo"}
+                <tr class="text-c">
+
+                    <td>{$vo.art5}</td>
+                    <td>{$vo.time5}</td>
+
+                </tr>
+                {/volist}
+                {volist name="list6" id="vo"}
+                <tr class="text-c">
+
+                    <td>{$vo.art6}</td>
+                    <td>{$vo.time6}</td>
+
+                </tr>
+                {/volist}
+                {volist name="list7" id="vo"}
+                <tr class="text-c">
+
+                    <td>{$vo.art7}</td>
+                    <td>{$vo.time7}</td>
+
+                </tr>
+                {/volist}
+                {volist name="list8" id="vo"}
+                <tr class="text-c">
+
+                    <td>{$vo.art8}</td>
+                    <td>{$vo.time8}</td>
+
+                </tr>
+                {/volist}
+                {volist name="list9" id="vo"}
+                <tr class="text-c">
+
+                    <td>{$vo.art9}</td>
+                    <td>{$vo.time9}</td>
+
+                </tr>
+                {/volist}
+                {volist name="list10" id="vo"}
+                <tr class="text-c">
+
+                    <td>{$vo.art10}</td>
+                    <td>{$vo.time10}</td>
+
+                </tr>
+                {/volist}
+
+                </tbody>
+            </table>
+
+        </article>
+    </div>
+
+</section>
+{/block}
+
+{block name='js'}
+
+
+{/block}
+
+
+
+</body>
+</html>
